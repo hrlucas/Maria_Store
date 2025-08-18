@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px 60px;
+  background-color: #e1b8b2;
+  font-family: 'Times New Roman', Times, serif;
+  color: #5b6757;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Partículas de fundo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background:
+    radial-gradient(circle 4px at 10% 20%, rgba(91, 103, 87, 0.15) 99%, transparent 100%),
+    radial-gradient(circle 3px at 30% 60%, rgba(91, 103, 87, 0.1) 99%, transparent 100%),
+    radial-gradient(circle 5px at 70% 40%, rgba(91, 103, 87, 0.12) 99%, transparent 100%);
+  background-repeat: repeat;
+  animation: particlesMove 30s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes particlesMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 1000px 0, 0 500px, 500px 1000px;
+  }
+}
+
+header {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 64px;
+  margin: 0 0 20px;
+  color: #5b6757;
+  position: relative;
+  z-index: 2;
+}
+
+/* Linha abaixo do título */
+header::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #b9777a 50%, transparent);
+  margin-top: 10px;
+}
+
+.slogan {
+  font-family: 'EB Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  color: #b9777a;
+  margin-top: 10px;
+}
+
+.imagem-amizade {
+  display: block;
+  margin: 40px auto;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.quem-somos-texto {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: center;
+  font-style: italic;
+  color: #5b6757;
+  padding: 0 20px;
+}
+
+.quem-somos-texto p + p {
+  margin-top: 24px;
+}
+
+.botoes {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-voltar {
+  background-color: #b9777a;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: #5b6757;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 14px;
+  color: #5b6757;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 60px;
+  border-top: 1px solid #b9777a;
+}
